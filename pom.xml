@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.camunda.bpm.example</groupId>
+  <artifactId>process-instance-variables</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+    <!-- set the version for camunda BPM here -->
+    <version.camunda>7.3.0</version.camunda>
+    <version.junit>4.11</version.junit>
+    <version.h2>1.3.168</version.h2>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.camunda.bpm</groupId>
+        <artifactId>camunda-bom</artifactId>
+        <type>pom</type>
+        <scope>import</scope>
+        <version>${version.camunda}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.camunda.bpm.extension</groupId>
+        <artifactId>camunda-bpm-assert</artifactId>
+        <version>1.2</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <!-- camunda process engine -->
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    
+    <!-- OPTIONAL: spin process engine plugin -->
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine-plugin-spin</artifactId>
+    </dependency>
+
+    <!-- OPTIONAL: spin dataformats -->
+    <dependency>
+      <groupId>org.camunda.spin</groupId>
+      <artifactId>camunda-spin-dataformat-json-jackson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.spin</groupId>
+      <artifactId>camunda-spin-dataformat-xml-dom</artifactId>
+    </dependency>
+    
+    
+    <dependency>
+      <groupId>org.camunda.bpm.extension</groupId>
+      <artifactId>camunda-bpm-assert</artifactId>
+      <version>1.2</version>
+    </dependency>
+  
+  <!-- database -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>provided</scope>
+      <version>${version.h2}</version>
+    </dependency>
+    
+    <!-- junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+      <version>${version.junit}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-jcl</artifactId>
+      <version>1.7.5</version>
+    </dependency>
+  </dependencies>
+</project>
