@@ -32,7 +32,7 @@
     <!-- engine plugins -->
     <property name="processEnginePlugins">
       <list>
-        <ref bean="piVarPlugin" />
+        <ref bean="variablesPlugin" />
         <ref bean="spinProcessEnginePlugin" />
       </list>
     </property>
@@ -44,7 +44,7 @@
   <!--<bean id="uuidGenerator" class="org.camunda.bpm.engine.impl.persistence.StrongUuidGenerator" />-->
 
   <!-- engine plugin beans -->
-  <bean id="piVarPlugin" class="org.camunda.bpm.examples.ProcessInstanceVariablePlugin" />
+  <bean id="variablesPlugin" class="org.camunda.bpm.variables.processinstance.ProcessInstanceVariablePlugin" />
   <bean id="spinProcessEnginePlugin" class="org.camunda.spin.plugin.impl.SpinProcessEnginePlugin" />
 
 </beans>

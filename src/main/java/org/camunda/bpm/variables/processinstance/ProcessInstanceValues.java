@@ -10,13 +10,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.examples;
+package org.camunda.bpm.variables.processinstance;
 
 import java.util.Map;
 
-import org.camunda.bpm.engine.impl.core.variable.type.PrimitiveValueTypeImpl;
-import org.camunda.bpm.engine.impl.core.variable.value.PrimitiveTypeValueImpl;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
+import org.camunda.bpm.engine.variable.impl.type.PrimitiveValueTypeImpl;
+import org.camunda.bpm.engine.variable.impl.value.PrimitiveTypeValueImpl;
 import org.camunda.bpm.engine.variable.type.PrimitiveValueType;
 
 /**

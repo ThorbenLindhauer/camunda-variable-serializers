@@ -10,15 +10,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.examples;
+package org.camunda.bpm.variables.enums;
 
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.variable.value.PrimitiveValue;
+import org.camunda.bpm.engine.variable.value.SerializableValue;
 
 /**
  * @author Thorben Lindhauer
  *
  */
-public interface ProcessInstanceValue extends PrimitiveValue<ProcessInstance> {
+public interface EnumValue extends SerializableValue {
 
+  String getEnumTypeName();
+
+  Enum<?> getValue();
 }

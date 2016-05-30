@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.camunda.bpm.examples;
+package org.camunda.bpm.variables.processinstance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +19,19 @@ import org.camunda.bpm.engine.ProcessEngine;
 import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import org.camunda.bpm.engine.impl.cfg.ProcessEnginePlugin;
 import org.camunda.bpm.engine.impl.variable.serializer.TypedValueSerializer;
+import org.camunda.bpm.variables.enums.EnumVariableSerializer;
 
 /**
  * @author Thorben Lindhauer
  *
  */
+// TODO: move class to other package
 public class ProcessInstanceVariablePlugin implements ProcessEnginePlugin {
 
   public void preInit(ProcessEngineConfigurationImpl processEngineConfiguration) {
     List<TypedValueSerializer> customSerializers = new ArrayList<TypedValueSerializer>();
     customSerializers.add(new ProcessInstanceVariableSerializer());
+    customSerializers.add(new EnumVariableSerializer());
 
     processEngineConfiguration.setCustomPreVariableSerializers(customSerializers);
   }

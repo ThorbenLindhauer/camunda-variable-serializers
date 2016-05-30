@@ -12,19 +12,26 @@
  */
 package org.camunda.bpm.unittest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
+import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.complete;
+import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.runtimeService;
+import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.task;
+
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.runtime.VariableInstance;
 import org.camunda.bpm.engine.test.Deployment;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.examples.ProcessInstanceValues;
-
-import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
-
+import org.camunda.bpm.variables.processinstance.ProcessInstanceValues;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class SimpleTestCase {
+/**
+ * @author Thorben Lindhauer
+ *
+ */
+public class ProcessInstanceVariablesTest {
 
   @Rule
   public ProcessEngineRule rule = new ProcessEngineRule();
@@ -71,5 +78,4 @@ public class SimpleTestCase {
     // Then the process instance should be ended
     assertThat(instance2).isEnded();
   }
-
 }
